@@ -1,0 +1,25 @@
+name: Push Trigger Workflow
+
+# Requirement: Runs automatically whenever code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  execute-tasks:
+    # Requirement: Use an Ubuntu runner
+    runs-on: ubuntu-latest
+
+    steps:
+      # Requirement: Print a success message
+      - name: Print Success Message
+        run: echo "Success! Code has been pushed to the main branch."
+
+      # Requirement: Display the current date and time
+      - name: Show Date and Time
+        run: date
+
+      # Requirement: Display the current working directory
+      - name: Show Current Working Directory
+        run: pwd
